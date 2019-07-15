@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import Vuex from 'vuex';
 import dictionary from './assets/dictionary.json';
 
 Vue.use(Vuex);
