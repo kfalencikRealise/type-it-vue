@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import Vuex from 'vuex';
+import dictionary from './assets/dictionary.json';
 
 Vue.use(Vuex);
 
@@ -183,12 +183,8 @@ export default new Vuex.Store({
   },
   actions: {
     getDictionary (context) {
-      fetch('./dictionary.json').then(function(res) {
-        res.json().then(function(data) {
-          context.commit('setField', ['dictionary', data]);
-          context.commit('setField', ['dictionarySize', Object.keys(data).length]);
-        });
-      });
+      context.commit('setField', ['dictionary', dictionary]);
+      context.commit('setField', ['dictionarySize', Object.keys(dictionary).length]);
     }
   },
 });
